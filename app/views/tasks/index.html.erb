@@ -9,7 +9,6 @@
     </li>
   <% end %>
   </ul>
-  <%#= @ids.inspect if @ids.present?  %>
   <%= submit_tag "Submit your Answers" if @in_completed_tasks.present? %>
 <% end %>
  
@@ -32,5 +31,8 @@
 
 <%= pie_chart Answer.group(:feedback).count , suffix: "%", refresh: 60 %> 
 
+<div id="messages">
+
+</div>
  
  
