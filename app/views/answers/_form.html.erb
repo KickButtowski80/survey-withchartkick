@@ -1,0 +1,12 @@
+<%= form_for @answer do |f| %>
+  Do you have a car?
+    <%= check_box_tag "feedback_ids[]", feedback.id %>
+  <br>
+  Do you have a laptop?
+  <%= check_box_tag "feedback_ids[]", feedback.id %>
+  <br>
+<%= f.submit %>
+
+<%end%>
+
+ 
