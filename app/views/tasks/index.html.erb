@@ -12,8 +12,7 @@
   <%#= @ids.inspect if @ids.present?  %>
   <%= submit_tag "Submit your Answers" if @in_completed_tasks.present? %>
 <% end %>
-
-Completed Tasks:
+ 
 <ul>
 <% @completed_tasks.each do |c| %>
     <li><%= c.name %></li>
