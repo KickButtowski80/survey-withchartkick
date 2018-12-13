@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'answser/index'
+  
   resources :tasks do   
     collection do
-      put :complete
+      post :complete
     end      
   end
   
   resources :answers 
-  get 'tasks/report' , to: 'tasks#report'
+ 
   
   root to: "tasks#index"
   

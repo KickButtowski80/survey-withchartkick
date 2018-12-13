@@ -1,0 +1,12 @@
+<%= form_for complete_tasks_path :method => :put do %>
+  <ul>
+  <% @in_completed_tasks.each do |task| %>
+    <li>
+      <%= check_box_tag "task_ids[]", task.id %>
+      <!--<input type="checkbox" name="task_ids[]" id="task_ids_" value="5">-->
+      <%= task.name %>
+    </li>
+  <% end %>
+  </ul>
+  <%= submit_tag "Submit your Answers" if @in_completed_tasks.present? %>
+<% end %>

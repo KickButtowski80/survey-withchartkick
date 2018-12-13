@@ -22,9 +22,6 @@ class TasksController < ApplicationController
     
     def complete
     
-    #  byebug 
-    #  Task.where(id: params[:task_ids]).update_all(complete: true)
-    #   debugger 
     ids = params[:task_ids]
     if ids
         ids.each do |id|
@@ -34,13 +31,16 @@ class TasksController < ApplicationController
                                    message:  answer
         end
     end
-    #  Task.update_all(["completed_at=?", Time.now], :id => params[:task_ids])
-      redirect_to root_path
+      
+       respond_to do |format|  
+            format.html {redirect_to root_path}
+            format.js  
+        end  
     end
     
         
 private 
    def allowed_tasks_params
-       params.require(:task).permit(:name, :complete)
+       params.require(:task).permit(:name , :complete)
    end
 end
