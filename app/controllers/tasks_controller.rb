@@ -30,6 +30,8 @@ class TasksController < ApplicationController
         ids.each do |id|
             answer = Task.where(id: id).first.name
             Answer.create(feedback: answer)
+            ActionCable.server.broadcast 'web_notifications_channel',
+                                   message:  answer
         end
     end
     #  Task.update_all(["completed_at=?", Time.now], :id => params[:task_ids])

@@ -21,18 +21,18 @@
 <hr/>
 
 <h1>All the answers</h1>
-<ul>
-<% @answers.each do |answer| %>
- <li><%= answer.feedback %> yes</li>
- <%end%>
-</ul>
 
-<hr />
 
-<%= pie_chart Answer.group(:feedback).count , suffix: "%", refresh: 60 %> 
-
-<div id="messages">
-
-</div>
+  <div id="messages">
+  
+  
+  </div>
  
+
+
+<hr /> 
+  <%= pie_chart Answer.group(:feedback).count , suffix: "%", refresh: 60 %> 
  
+ <hr></hr>
+
+  
