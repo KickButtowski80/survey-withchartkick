@@ -33,7 +33,7 @@ class TasksController < ApplicationController
                 # row 3: feedback: "Do you have a bus?"
                 # answer ===> "Do you have a car?"
                 ActionCable.server.broadcast 'web_notifications_channel',
-                                       message:  answer
+                                       message:  answer + "yes"
             end
         end
           
@@ -41,9 +41,7 @@ class TasksController < ApplicationController
                 # format.html {redirect_to root_path}
                 format.js  # renders => 'app/views/tasks/complete.js.erb'
           end  
-    end
-    
-        
+    end     
 private 
    def allowed_tasks_params
        # HTTP Form Data
@@ -58,4 +56,6 @@ private
        # task[] <--- 2
        # task[] <--- 3
    end
-end
+    
+end  
+
