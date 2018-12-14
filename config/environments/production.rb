@@ -92,5 +92,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.web_socket_server_url = "https://survey-pie-chart.herokuapp.com/cable" 
+  config.web_socket_server_url = "wss://survey-pie-chart.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://survey-pie-chart.herokuapp.com']
 end
