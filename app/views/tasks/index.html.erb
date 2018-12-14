@@ -1,8 +1,7 @@
 <h1>All Questions</h1>
  
- <%= content_tag(:div, nil, id: 'results') do %>
- 
-  <%= render partial: 'tasks/questions_form' %>
+ <%= content_tag(:div, nil, id: 'results') do %> 
+    <%= render partial: 'tasks/questions_form' %>
  <% end %>
 <ul>
 <% @completed_tasks.each do |c| %>
@@ -13,7 +12,10 @@
 <hr/>
 
 <h1>All the answers</h1>
-  <div id="messages">  
+  <div id="messages">
+     <% Answer.all.each do |answer| %>
+     <%= answer.feedback %></br>
+      <% end %>
   </div>
 <hr /> 
   <%= pie_chart Answer.group(:feedback).count , suffix: "%", refresh: 60 %>  

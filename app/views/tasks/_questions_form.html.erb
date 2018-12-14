@@ -1,7 +1,19 @@
-<%= form_for complete_tasks_path :method => :put do %>
+<script>
+  $(document).ready(function(){
+    var $submitQuestionsForm = $('#submit-questions-form')
+    $submitQuestionsForm.on('ajax:success', function(e, data, status, xhr) {
+      $submitQuestionsForm.find('input:checkbox').removeAttr('checked');
+    //}).on('ajax:error',function(e, xhr, status, error){
+    //  $('#reportalert').text('Failed.');
+    });
+  });
+</script>
+
+<%= form_tag complete_tasks_path, format: :js, remote: true, id: 'submit-questions-form' do %>
   <ul>
   <% @in_completed_tasks.each do |task| %>
     <li>
+      <%#= hidden_field_tag "task[]" , task.name %>
       <%= check_box_tag "task_ids[]", task.id %>
       <!--<input type="checkbox" name="task_ids[]" id="task_ids_" value="5">-->
       <%= task.name %>
