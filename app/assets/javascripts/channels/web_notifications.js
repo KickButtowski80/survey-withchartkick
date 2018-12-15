@@ -28,6 +28,9 @@ App.web_notifications = App.cable.subscriptions.create("WebNotificationsChannel"
        // {"Do you have a bus?"=>1, "Do you have a car?"=>1} 
        // => New Incoming WS Stream ==> data['message'] = 'Do you have a bus?'
        
-       return $('#messages').append(data['message'] + "<br>");
+       return $('#messages').append(
+           "<div>" +           
+            data['message'] +
+           "</div>");
   }
 });

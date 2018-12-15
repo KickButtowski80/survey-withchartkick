@@ -12,11 +12,15 @@
 <hr/>
 
 <h1>All the answers</h1>
-  <div id="messages">
+<div id="hide-answers">
+   <div id="messages">
      <% Answer.all.each do |answer| %>
      <%= answer.feedback %></br>
       <% end %>
   </div>
+</div>
+<button id="hide">Show the Answers</button>
+
 <hr /> 
   <%= pie_chart Answer.group(:feedback).count , suffix: "%", refresh: 60 %>  
 

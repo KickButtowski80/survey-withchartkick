@@ -33,7 +33,7 @@ class TasksController < ApplicationController
                 # row 3: feedback: "Do you have a bus?"
                 # answer ===> "Do you have a car?"
                 ActionCable.server.broadcast 'web_notifications_channel',
-                                       message:  answer + "yes"
+                                       message:  answer
             end
         end
           

@@ -17,7 +17,19 @@
 //= require turbolinks
 //= require_tree .
  
- 
+$( document ).on('turbolinks:load', function() {
+  $("#hide").click(function(){
+    //   debugger
+    $("#hide-answers").toggle();
+    
+    if( $("#hide").text() === "Show the Answers"){
+        $("#hide").text('Hide the Answers');
+    }else
+       $("#hide").text('Show the Answers');
+       
+       
+  });
+});
  
  
  
