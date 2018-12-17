@@ -1,5 +1,5 @@
 # README
 
-Survey which includes checkboxes and use chartkick gem 
+Survey which includes checkboxes and use chartkick gem and **ActionCable** was used in this app.
 
  
